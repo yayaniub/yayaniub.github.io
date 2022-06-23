@@ -9,7 +9,7 @@
     
     <title>
         
-            Hello World |
+            CloudFlare Pages 反代脚本分享 |
         
         Pgyu&#39;s Blog
     </title>
@@ -193,7 +193,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Hello World</span>
+            <span class="title-hover-animation">CloudFlare Pages 反代脚本分享</span>
         </div>
 
         
@@ -212,21 +212,43 @@
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-06-22 20:56:13</span>
-        <span class="mobile">2022-06-22 20:56</span>
+        <span class="pc">2022-06-23 15:10:50</span>
+        <span class="mobile">2022-06-23 15:10</span>
     </span>
     
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%85%8D%E8%B4%B9/">免费</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/cf/">cf</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>75 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>524 字</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
         </span>
     
     
@@ -242,31 +264,23 @@
         
 
         <div class="article-content markdown-body">
-            <p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <h4 id="1-简介："><a href="#1-简介：" class="headerlink" title="1. 简介："></a><strong>1. 简介：</strong></h4><p>今天和大家分享几个CloudFlare Pages 反代脚本，来加速富强。</p>
+<h4 id="2-反代脚本："><a href="#2-反代脚本：" class="headerlink" title="2. 反代脚本："></a><strong>2. 反代脚本：</strong></h4><h5 id="2-1-单双日轮换反代代码"><a href="#2-1-单双日轮换反代代码" class="headerlink" title="2.1 单双日轮换反代代码"></a><strong>2.1 单双日轮换反代代码</strong></h5><figure class="highlight plaintext"><figcaption><span>default &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  async fetch(request, env) &#123;</span><br><span class="line">    const day1 = &#x27;app0.example.com&#x27;</span><br><span class="line">    const day2 = &#x27;app1.example.com&#x27;</span><br><span class="line">    let url = new URL(request.url);</span><br><span class="line">    if (url.pathname.startsWith(&#x27;/&#x27;)) &#123;</span><br><span class="line">      let day = new Date()</span><br><span class="line">      if (day.getDay() % 2) &#123;</span><br><span class="line">        url.hostname = day1</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        url.hostname = day2</span><br><span class="line">      &#125;</span><br><span class="line">      let new_request = new Request(url, request);</span><br><span class="line">      return fetch(new_request);</span><br><span class="line">    &#125;</span><br><span class="line">    return env.ASSETS.fetch(request);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="2-2-五天轮换反代代码"><a href="#2-2-五天轮换反代代码" class="headerlink" title="2.2 五天轮换反代代码"></a><strong>2.2 五天轮换反代代码</strong></h5><figure class="highlight plaintext"><figcaption><span>default &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">  async fetch(request, env) &#123;</span><br><span class="line">    const day1 = &#x27;app0.example.com&#x27;</span><br><span class="line">    const day2 = &#x27;app1.example.com&#x27;</span><br><span class="line">    const day3 = &#x27;app2.example.com&#x27;</span><br><span class="line">    const day4 = &#x27;app3.example.com&#x27;</span><br><span class="line">    const day5 = &#x27;app4.example.com&#x27;</span><br><span class="line">    let url = new URL(request.url);</span><br><span class="line">    if (url.pathname.startsWith(&#x27;/&#x27;)) &#123;</span><br><span class="line">      let day = new Date().getDay() % 5;</span><br><span class="line">      if (day === 0) &#123;</span><br><span class="line">        url.hostname = day1</span><br><span class="line">      &#125; else if (day === 1) &#123;</span><br><span class="line">        url.hostname = day2</span><br><span class="line">      &#125; else if (day === 2) &#123;</span><br><span class="line">        url.hostname = day3</span><br><span class="line">      &#125; else if (day === 3) &#123;</span><br><span class="line">        url.hostname = day4</span><br><span class="line">      &#125; else if (day === 4) &#123;</span><br><span class="line">        url.hostname = day5</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        url.hostname = day1</span><br><span class="line">      &#125;</span><br><span class="line">      let new_request = new Request(url, request);</span><br><span class="line">      return fetch(new_request);</span><br><span class="line">    &#125;</span><br><span class="line">    return env.ASSETS.fetch(request);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="2-3-一周轮换反代代码"><a href="#2-3-一周轮换反代代码" class="headerlink" title="2.3 一周轮换反代代码"></a><strong>2.3 一周轮换反代代码</strong></h5><figure class="highlight plaintext"><figcaption><span>default &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">  async fetch(request, env) &#123;</span><br><span class="line">    const day1 = &#x27;app0.example.com&#x27;</span><br><span class="line">    const day2 = &#x27;app1.example.com&#x27;</span><br><span class="line">    const day3 = &#x27;app2.example.com&#x27;</span><br><span class="line">    const day4 = &#x27;app3.example.com&#x27;</span><br><span class="line">    const day5 = &#x27;app4.example.com&#x27;</span><br><span class="line">    const day6 = &#x27;app5.example.com&#x27;</span><br><span class="line">    const day7 = &#x27;app6.example.com&#x27;</span><br><span class="line">    let url = new URL(request.url);</span><br><span class="line">    if (url.pathname.startsWith(&#x27;/&#x27;)) &#123;</span><br><span class="line">      let day = new Date().getDay();</span><br><span class="line">      if (day === 0) &#123;</span><br><span class="line">        url.hostname = day1</span><br><span class="line">      &#125; else if (day === 1) &#123;</span><br><span class="line">        url.hostname = day2</span><br><span class="line">      &#125; else if (day === 2) &#123;</span><br><span class="line">        url.hostname = day3</span><br><span class="line">      &#125; else if (day === 3) &#123;</span><br><span class="line">        url.hostname = day4</span><br><span class="line">      &#125; else if (day === 4) &#123;</span><br><span class="line">        url.hostname = day5</span><br><span class="line">      &#125; else if (day === 5) &#123;</span><br><span class="line">        url.hostname = day6</span><br><span class="line">      &#125; else if (day === 6) &#123;</span><br><span class="line">        url.hostname = day7</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        url.hostname = day1</span><br><span class="line">      &#125;</span><br><span class="line">      let new_request = new Request(url, request);</span><br><span class="line">      return fetch(new_request);</span><br><span class="line">    &#125;</span><br><span class="line">    return env.ASSETS.fetch(request);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
-
+<h5 id="2-4-任意天数反代代码"><a href="#2-4-任意天数反代代码" class="headerlink" title="2.4 任意天数反代代码"></a><strong>2.4 任意天数反代代码</strong></h5><figure class="highlight plaintext"><figcaption><span>default &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">async fetch(request, env) &#123;</span><br><span class="line">const cars = [</span><br><span class="line">&quot;app1.example.com&quot;,</span><br><span class="line">&quot;app2.example.com&quot;,</span><br><span class="line">&quot;app3.example.com&quot;,</span><br><span class="line">&quot;app4.example.com&quot;,</span><br><span class="line">&quot;app5.example.com&quot;</span><br><span class="line">];</span><br><span class="line">let host = cars[Math.floor(Math.random() * cars.length)]; //随机选择VPS</span><br><span class="line">//let host = cars[new Date().getDate() % cars.length]; //每天自动更换VPS</span><br><span class="line">let url = new URL(request.url);</span><br><span class="line">if (url.pathname.startsWith(&#x27;/&#x27;)) &#123;</span><br><span class="line">url.hostname = host;</span><br><span class="line">let new_request = new Request(url,request);</span><br><span class="line">return fetch(new_request);</span><br><span class="line">&#125;</span><br><span class="line">return env.ASSETS.fetch(request);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
         </div>
 
         
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Hello World</li>
+        <li>本文标题：CloudFlare Pages 反代脚本分享</li>
         <li>本文作者：Pgyu</li>
-        <li>创建时间：2022-06-22 20:56:13</li>
+        <li>创建时间：2022-06-23 15:10:50</li>
         <li>
-            本文链接：https://yayaniub.github.io/2022/06/22/hello-world/
+            本文链接：https://yayaniub.github.io/2022/06/23/cloudFlare-pages/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -278,25 +292,33 @@
         
 
         
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/cf/">#cf</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
 
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/06/22/microsoft-widows/"
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/06/23/heroku-xary/"
                         >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">Microsoft Learn的Azure 临时RDP远程桌面</span>
-                                <span class="post-nav-item">上一篇</span>
+                                <span class="post-nav-title-item">Heroku五合一协议共存项目</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
@@ -446,7 +468,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="nav-text">1. 简介：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%8F%8D%E4%BB%A3%E8%84%9A%E6%9C%AC%EF%BC%9A"><span class="nav-text">2. 反代脚本：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-%E5%8D%95%E5%8F%8C%E6%97%A5%E8%BD%AE%E6%8D%A2%E5%8F%8D%E4%BB%A3%E4%BB%A3%E7%A0%81"><span class="nav-text">2.1 单双日轮换反代代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-%E4%BA%94%E5%A4%A9%E8%BD%AE%E6%8D%A2%E5%8F%8D%E4%BB%A3%E4%BB%A3%E7%A0%81"><span class="nav-text">2.2 五天轮换反代代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-%E4%B8%80%E5%91%A8%E8%BD%AE%E6%8D%A2%E5%8F%8D%E4%BB%A3%E4%BB%A3%E7%A0%81"><span class="nav-text">2.3 一周轮换反代代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-%E4%BB%BB%E6%84%8F%E5%A4%A9%E6%95%B0%E5%8F%8D%E4%BB%A3%E4%BB%A3%E7%A0%81"><span class="nav-text">2.4 任意天数反代代码</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>

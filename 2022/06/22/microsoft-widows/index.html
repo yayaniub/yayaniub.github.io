@@ -9,7 +9,7 @@
     
     <title>
         
-            归档: 2022 |
+            Microsoft Learn的Azure 临时RDP远程桌面 |
         
         Pgyu&#39;s Blog
     </title>
@@ -71,7 +71,7 @@
                         </li>
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/archives"
                             >
                                 归档
@@ -145,7 +145,7 @@
                 </li>
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/archives">归档</a>
                 </li>
             
@@ -190,52 +190,200 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="archive-container ">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Microsoft Learn的Azure 临时RDP远程桌面</span>
+        </div>
+
         
-<div class="archive-list-container">
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.1x6kc0konin4.webp">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Pgyu</span>
+                        
+                            <span class="author-label">Trainee</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-06-22 23:34:25</span>
+        <span class="mobile">2022-06-22 23:34</span>
+    </span>
     
-        <section class="archive-item">
-            <div class="archive-item-header">
-                <span class="archive-year">2022</span>
-                <span class="archive-year-post-count">[4]</span>
-            </div>
-            <ul class="article-list">
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
                 
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/06/23/cloudFlare-pages/"
-                        >CloudFlare Pages 反代脚本分享</a>
-                        <span class="article-date">06-23</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/06/23/heroku-xary/"
-                        >Heroku五合一协议共存项目</a>
-                        <span class="article-date">06-23</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/06/22/microsoft-widows/"
-                        >Microsoft Learn的Azure 临时RDP远程桌面</a>
-                        <span class="article-date">06-22</span>
-                    </li>
-                
-                    <li class="article-item">
-                        <a class="article-title"
-                           href="/2022/06/22/hello-world/"
-                        >Hello World</a>
-                        <span class="article-date">06-22</span>
+                    <li>
+                        <a href="/categories/%E5%85%8D%E8%B4%B9/">免费</a>&nbsp;
                     </li>
                 
             </ul>
-        </section>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%85%8D%E8%B4%B9/">免费</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>292 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>1 分钟</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>在之前的文章中，我描述过Microsoft Learn的远程桌面。但是那篇文章的方法只能用2个小时。本文的教程是使用Microsoft Learn的Azure的沙箱，来创建临时RDP远程桌面</p>
+<h5 id="1-准备材料"><a href="#1-准备材料" class="headerlink" title="1.准备材料"></a>1.准备材料</h5><ul>
+<li><p>Microsoft账号</p>
+</li>
+<li><p>远程桌面软件</p>
+</li>
+</ul>
+<h5 id="2-部署步骤"><a href="#2-部署步骤" class="headerlink" title="2.部署步骤"></a>2.部署步骤</h5><ul>
+<li><p>打开这个沙箱</p>
+</li>
+<li><p>点击“激活沙盒”按钮，如未登录Microsoft 账户的会自动跳转登录页面登录</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.39lh53zu8ey0.webp"></p>
+<ul>
+<li>由于Azure沙盒微软是严格限制访问其外网的服务，因此这篇文章会用到我朋友写的加密破解脚本来创建VPS。在右边的Cloud Shell运行以下命令</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -skLO bit.do/azurewinvmplus ; chmod +x azurewinvmplus ; ./azurewinvmplus</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h5 id="3-选择VPS地区"><a href="#3-选择VPS地区" class="headerlink" title="3.选择VPS地区"></a>3.选择VPS地区</h5><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.39lh53zu8ey0.webp"></p>
+<h5 id="4-选择系统"><a href="#4-选择系统" class="headerlink" title="4.选择系统"></a>4.选择系统</h5><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.qg9f5ek55n4.webp"></p>
+<h5 id="5-选择配置，然后等待创建"><a href="#5-选择配置，然后等待创建" class="headerlink" title="5.选择配置，然后等待创建"></a>5.选择配置，然后等待创建</h5><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.2h36ov0t6ky0.webp"></p>
+<h5 id="6-等待差不多5-10分钟，然后就可以看到RDP的登录信息了"><a href="#6-等待差不多5-10分钟，然后就可以看到RDP的登录信息了" class="headerlink" title="6.等待差不多5-10分钟，然后就可以看到RDP的登录信息了"></a>6.等待差不多5-10分钟，然后就可以看到RDP的登录信息了</h5><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.30m7vm7bttc0.webp"></p>
+<h5 id="7-微软远程桌面软件中，计算机名称填写刚刚提示的IP"><a href="#7-微软远程桌面软件中，计算机名称填写刚刚提示的IP" class="headerlink" title="7.微软远程桌面软件中，计算机名称填写刚刚提示的IP"></a>7.微软远程桌面软件中，计算机名称填写刚刚提示的IP</h5><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.50ezwnd4iac0.webp"></p>
+<h5 id="8-输入用户名密码"><a href="#8-输入用户名密码" class="headerlink" title="8.输入用户名密码"></a>8.输入用户名密码</h5><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.33ie6b3sdoa0.webp"></p>
+<h5 id="9-连接到远程桌面，白嫖成功！"><a href="#9-连接到远程桌面，白嫖成功！" class="headerlink" title="9.连接到远程桌面，白嫖成功！"></a>9.连接到远程桌面，白嫖成功！</h5><p>本文转载自小御坂的破站<br>文章作者: Misaka No<br>文章链接: <a class="link"   target="_blank" rel="noopener" href="https://owo.misaka.rest/az-mslearn-windesktop/" >https://owo.misaka.rest/az-mslearn-windesktop/<i class="fas fa-external-link-alt"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：Microsoft Learn的Azure 临时RDP远程桌面</li>
+        <li>本文作者：Pgyu</li>
+        <li>创建时间：2022-06-22 23:34:25</li>
+        <li>
+            本文链接：https://yayaniub.github.io/2022/06/22/microsoft-widows/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E5%85%8D%E8%B4%B9/">#免费</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/06/23/heroku-xary/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Heroku五合一协议共存项目</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/06/22/hello-world/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+
+
+        
+    
+</div>
+
+            </div>
+        
     </div>
 </div>
+
 
                 
             </div>
@@ -279,6 +427,27 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -335,6 +504,14 @@
     </div>
 
     
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E6%9D%90%E6%96%99"><span class="nav-text">1.准备材料</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E9%83%A8%E7%BD%B2%E6%AD%A5%E9%AA%A4"><span class="nav-text">2.部署步骤</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E9%80%89%E6%8B%A9VPS%E5%9C%B0%E5%8C%BA"><span class="nav-text">3.选择VPS地区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E9%80%89%E6%8B%A9%E7%B3%BB%E7%BB%9F"><span class="nav-text">4.选择系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-%E9%80%89%E6%8B%A9%E9%85%8D%E7%BD%AE%EF%BC%8C%E7%84%B6%E5%90%8E%E7%AD%89%E5%BE%85%E5%88%9B%E5%BB%BA"><span class="nav-text">5.选择配置，然后等待创建</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-%E7%AD%89%E5%BE%85%E5%B7%AE%E4%B8%8D%E5%A4%9A5-10%E5%88%86%E9%92%9F%EF%BC%8C%E7%84%B6%E5%90%8E%E5%B0%B1%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0RDP%E7%9A%84%E7%99%BB%E5%BD%95%E4%BF%A1%E6%81%AF%E4%BA%86"><span class="nav-text">6.等待差不多5-10分钟，然后就可以看到RDP的登录信息了</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-%E5%BE%AE%E8%BD%AF%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E8%BD%AF%E4%BB%B6%E4%B8%AD%EF%BC%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%8D%E7%A7%B0%E5%A1%AB%E5%86%99%E5%88%9A%E5%88%9A%E6%8F%90%E7%A4%BA%E7%9A%84IP"><span class="nav-text">7.微软远程桌面软件中，计算机名称填写刚刚提示的IP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-%E8%BE%93%E5%85%A5%E7%94%A8%E6%88%B7%E5%90%8D%E5%AF%86%E7%A0%81"><span class="nav-text">8.输入用户名密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#9-%E8%BF%9E%E6%8E%A5%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%EF%BC%8C%E7%99%BD%E5%AB%96%E6%88%90%E5%8A%9F%EF%BC%81"><span class="nav-text">9.连接到远程桌面，白嫖成功！</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
 
     <div class="image-viewer-container">
     <img src="">
@@ -389,6 +566,8 @@
 
 
 <div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
     
 </div>
 
