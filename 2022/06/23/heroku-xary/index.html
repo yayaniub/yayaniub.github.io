@@ -240,6 +240,10 @@
                         | <a href="/tags/%E7%99%BD%E5%AB%96/">白嫖</a>&nbsp;
                     </li>
                 
+                    <li>
+                        | <a href="/tags/xary/">xary</a>&nbsp;
+                    </li>
+                
             </ul>
         </span>
     
@@ -247,7 +251,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>635 字</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>648 字</span>
         </span>
     
     
@@ -269,84 +273,50 @@
 
         <div class="article-content markdown-body">
             <h4 id="1-简介："><a href="#1-简介：" class="headerlink" title="1. 简介："></a><strong>1. 简介：</strong></h4><ul>
-<li><p>仅适用于Github下部署</p>
-</li>
-<li><p>Xray内核，支持vless-ws，vmess-ws，trojan-ws，shadowsocks-ws，socks5-ws搭建过程与客户端配置说明</p>
-</li>
-<li><p>下载后上传到Github上进行部署。注意项目名称说明不要出现有V2ray、Xray等相关字样。</p>
-</li>
+<li>仅适用于Github下部署</li>
+<li>Xray内核，支持vless-ws，vmess-ws，trojan-ws，shadowsocks-ws，socks5-ws搭建过程与客户端配置说明</li>
+<li>下载后上传到Github上进行部署。注意项目名称说明不要出现有V2ray、Xray等相关字样。</li>
 </ul>
 <h4 id="2-操作步骤："><a href="#2-操作步骤：" class="headerlink" title="2. 操作步骤："></a><strong>2. 操作步骤：</strong></h4><h5 id="2-1-步骤"><a href="#2-1-步骤" class="headerlink" title="2.1 步骤"></a><strong>2.1 步骤</strong></h5><ul>
-<li><p>在浏览器复制链接   <a class="link"   target="_blank" rel="noopener" href="https://dashboard.heroku.com/new?template=" >https://dashboard.heroku.com/new?template=<i class="fas fa-external-link-alt"></i></a> 加上上传至Github的项目地址链接，回车进入Heroku参数设置界面</p>
-</li>
-<li><p>之前没有登录记录的话，会先提示注册并或登录Heroku界面，大家自己注册或者登录下</p>
-</li>
-<li><p>Heroku app名称与国家随意，最后设置图如下</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.30q5nzo27ak0.webp"></p>
-<ul>
-<li><p>输入UUID，建议使用V2rayN等工具生成，点击Deploy app，几秒种后就完成安装。</p>
-</li>
-<li><p>由于使用了Caddy，未设伪装网页，所以点击heroku本地域名时（app.heroku.com）为空白界面，所有反代（workers与pages）测试为绿色200 ok，反代地址也为空白界面，请大家知晓。</p>
-</li>
+<li>在浏览器复制链接   <a class="link"   target="_blank" rel="noopener" href="https://dashboard.heroku.com/new?template=" >https://dashboard.heroku.com/new?template=<i class="fas fa-external-link-alt"></i></a> 加上上传至Github的项目地址链接，回车进入Heroku参数设置界面</li>
+<li>之前没有登录记录的话，会先提示注册并或登录Heroku界面，大家自己注册或者登录下</li>
+<li>Heroku app名称与国家随意，最后设置图如下——<a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.30q5nzo27ak0.webp" >点击查看见此图<i class="fas fa-external-link-alt"></i></a></li>
+<li>输入UUID，建议使用V2rayN等工具生成，点击Deploy app，几秒种后就完成安装。</li>
+<li>由于使用了Caddy，未设伪装网页，所以点击heroku本地域名时（app.heroku.com）为空白界面，所有反代（workers与pages）测试为绿色200 ok，反代地址也为空白界面，请大家知晓。</li>
 </ul>
 <h5 id="2-2-关于heroku封杀特征说明："><a href="#2-2-关于heroku封杀特征说明：" class="headerlink" title="2.2 关于heroku封杀特征说明："></a><strong>2.2 关于heroku封杀特征说明：</strong></h5><ul>
-<li><p>项目部署时被强制中断封杀</p>
-</li>
-<li><p>项目部署后，测个速度也会被封杀</p>
-</li>
-<li><p>项目部署后，不跑流量，放着不动也会被封杀</p>
-</li>
+<li>项目部署时被强制中断封杀</li>
+<li>项目部署后，测个速度也会被封杀</li>
+<li>项目部署后，不跑流量，放着不动也会被封杀<br><strong>已证实，heroku封杀看特性，不看流量大小。之前的项目是明文，现在加密了，测试了几周没问题，所以大家可以试试看。</strong></li>
 </ul>
-<p><strong>已证实，heroku封杀看特性，不看流量大小。之前的项目是明文，现在加密了，测试了几周没问题，所以大家可以试试看。</strong></p>
 <h4 id="3-客户端配置如下"><a href="#3-客户端配置如下" class="headerlink" title="3.客户端配置如下"></a><strong>3.客户端配置如下</strong></h4><h5 id="3-1-IOS端小火箭就可以通吃，安卓端推荐V2rayNG或搭配Kitsunebi"><a href="#3-1-IOS端小火箭就可以通吃，安卓端推荐V2rayNG或搭配Kitsunebi" class="headerlink" title="3.1 IOS端小火箭就可以通吃，安卓端推荐V2rayNG或搭配Kitsunebi"></a><strong>3.1 IOS端小火箭就可以通吃，安卓端推荐V2rayNG或搭配Kitsunebi</strong></h5><ul>
-<li><p>协议：(vless&#x2F;vmess&#x2F;trojan)-ws</p>
-</li>
-<li><p>地址：app.heroku.com（自选IP&#x2F;域名）</p>
-</li>
-<li><p>端口：443</p>
-</li>
-<li><p>用户ID&#x2F;密码：自定义UUID</p>
-</li>
-<li><p>传输协议：ws</p>
-</li>
-<li><p>伪装host：app.heroku.com（workers或pages反代&#x2F;自定义域）</p>
-</li>
-<li><p>路径path：&#x2F;自定义UUID-协议开头两小写字母</p>
-</li>
-<li><p>传输安全：tls</p>
-</li>
-<li><p>SNI：app.heroku.com（workers或pages反代&#x2F;自定义域）</p>
-</li>
+<li>协议：(vless&#x2F;vmess&#x2F;trojan)-ws</li>
+<li>地址：app.heroku.com（自选IP&#x2F;域名）</li>
+<li>端口：443</li>
+<li>用户ID&#x2F;密码：自定义UUID</li>
+<li>传输协议：ws</li>
+<li>伪装host：app.heroku.com（workers或pages反代&#x2F;自定义域）</li>
+<li>路径path：&#x2F;自定义UUID-协议开头两小写字母</li>
+<li>传输安全：tls</li>
+<li>SNI：app.heroku.com（workers或pages反代&#x2F;自定义域）<br><strong>其他设置保持默认即可！</strong></li>
 </ul>
-<p><strong>其他设置保持默认即可！</strong></p>
 <h5 id="3-2-shadowsocks-ws与socks5-ws推荐用Kitsunebi，配置简单，不需要plugin插件"><a href="#3-2-shadowsocks-ws与socks5-ws推荐用Kitsunebi，配置简单，不需要plugin插件" class="headerlink" title="3.2 shadowsocks-ws与socks5-ws推荐用Kitsunebi，配置简单，不需要plugin插件"></a><strong>3.2 shadowsocks-ws与socks5-ws推荐用Kitsunebi，配置简单，不需要plugin插件</strong></h5><ul>
-<li><p>地址：app.heroku.com（自选IP&#x2F;域名）</p>
-</li>
-<li><p>端口：443</p>
-</li>
-<li><p>shadowsocks密码：自定义UUID</p>
-</li>
-<li><p>shadowsocks加密方式：chacha20-ietf-poly1305(默认)</p>
-</li>
-<li><p>socks5用户名：空</p>
-</li>
+<li>地址：app.heroku.com（自选IP&#x2F;域名）</li>
+<li>端口：443</li>
+<li>shadowsocks密码：自定义UUID</li>
+<li>shadowsocks加密方式：chacha20-ietf-poly1305(默认)</li>
+<li>socks5用户名：空</li>
 </ul>
 <h5 id="3-3-socks5密码："><a href="#3-3-socks5密码：" class="headerlink" title="3.3 socks5密码："></a><strong>3.3 socks5密码：</strong></h5><ul>
-<li><p>传输协议：ws</p>
-</li>
-<li><p>伪装host：app.heroku.com（workers或pages反代&#x2F;自定义域）</p>
-</li>
-<li><p>路径path：&#x2F;自定义UUID-协议开头两小写字母</p>
-</li>
-<li><p>传输安全：tls</p>
-</li>
-<li><p>SNI(证书域名)：app.heroku.com（workers或pages反代&#x2F;自定义域）</p>
-</li>
+<li>传输协议：ws</li>
+<li>伪装host：app.heroku.com（workers或pages反代&#x2F;自定义域）</li>
+<li>路径path：&#x2F;自定义UUID-协议开头两小写字母</li>
+<li>传输安全：tls</li>
+<li>SNI(证书域名)：app.heroku.com（workers或pages反代&#x2F;自定义域）<br><strong>其他设置保持默认即可！</strong></li>
 </ul>
-<p><strong>其他设置保持默认即可！</strong></p>
-<h4 id="4-关于为什么套CF以及满足自选IP-x2F-域名的条件解答（443端口，且TLS开启）"><a href="#4-关于为什么套CF以及满足自选IP-x2F-域名的条件解答（443端口，且TLS开启）" class="headerlink" title="4. 关于为什么套CF以及满足自选IP&#x2F;域名的条件解答（443端口，且TLS开启）"></a><strong>4. 关于为什么套CF以及满足自选IP&#x2F;域名的条件解答（443端口，且TLS开启）</strong></h4><p><img src="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.29nd3fiyizk0.webp"></p>
+<h4 id="4-关于为什么套CF以及满足自选IP-x2F-域名的条件解答（443端口，且TLS开启）"><a href="#4-关于为什么套CF以及满足自选IP-x2F-域名的条件解答（443端口，且TLS开启）" class="headerlink" title="4. 关于为什么套CF以及满足自选IP&#x2F;域名的条件解答（443端口，且TLS开启）"></a><strong>4. 关于为什么套CF以及满足自选IP&#x2F;域名的条件解答（443端口，且TLS开启）</strong></h4><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/yayaniub/PicX@master/20220623/image.29nd3fiyizk0.webp" >点击查看解答<i class="fas fa-external-link-alt"></i></a></li>
+</ul>
 
         </div>
 
@@ -378,6 +348,10 @@
                 
                     <li class="tag-item">
                         <a href="/tags/%E7%99%BD%E5%AB%96/">#白嫖</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/xary/">#xary</a>&nbsp;
                     </li>
                 
             </ul>
