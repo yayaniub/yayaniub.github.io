@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-06-25T03:06:32.514Z</updated>
+  <updated>2022-07-08T00:22:41.823Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,82 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo+GitHub搭建个人免费博客教程</title>
+    <link href="http://example.com/2022/07/08/Hexo%EF%BC%8CHugoT%EF%BC%8Cypecho%EF%BC%8CWordpress%E5%8D%9A%E5%AE%A2%E9%80%89%E6%8B%A9/"/>
+    <id>http://example.com/2022/07/08/Hexo%EF%BC%8CHugoT%EF%BC%8Cypecho%EF%BC%8CWordpress%E5%8D%9A%E5%AE%A2%E9%80%89%E6%8B%A9/</id>
+    <published>2022-07-08T00:13:57.406Z</published>
+    <updated>2022-07-08T00:22:41.823Z</updated>
+    
+    <content type="html"><![CDATA[<p> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446767346-blog.jpg" alt="Test"> </p><h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>　从Wordpress到Hexo，再到Hugo，又到Typecho，再到Halo，兜兜转转，咕咕最后还是决定博客搬回到了Wordpress上，既然体验了这么多的博客框架，这周就来和大家分享一下这几个博客的优缺点吧。</p><h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p>　首先介绍的是Hexo，这也是我没买服务器之前折腾的第一个博客。用的主题是butterfly，想当年刚用的时候，作者还没建群，现在qq群都有上千人了，GitHub上的星星数量也有2.7k了。</p><h4 id="演示站点"><a href="#演示站点" class="headerlink" title="演示站点"></a><a class="link"   href="https://yirenliu.cn/" >演示站点<i class="fas fa-external-link-alt"></i></a></h4><p> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446790542-hexoex.png" alt="Test"><br> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446785137-hexo.jpeg" alt="Test"> </p><p> <img src="https://pic.loll.cc/images/2021/08/20/20210820155353.png" alt="Test"> </p><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>如果你不想买服务器，但也想折腾一个博客，那边我十分推荐你用Hexo+Butterfly主题，然后部署在GitHub上，基本上你就负责写博客就行了，完全不用去理会服务器会不会挂的问题，也不用担心有人攻击你的服务器，如果你不想买域名，你甚至可以不用花一分钱就拥有一个自己的博客。</li><li>而且Butterfly颜值没得说，功能也很齐全，基本上可以满足你对博客的所有需求。</li></ul><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><p>　当然，用Hexo搭建博客也是有缺点的，最大的问题就是折腾。</p><ul><li>环境配置<br>　你需要现在本地配置Hexo的环境（NodeJS、Git、GitHub的一系列信息），由于防火墙的原因，有时候你连接GitHub可能会连接不上（虽然你可以部署到coding可以解决一些问题）</li><li>没有后端<br>　没有后端（当然这也是一个优点，可以让你的博客加载更快），这意味着，你没有一个后台来写作，你基本上只能都是本地写，然后通过Git命令。来推送到你的GitHub仓库。一旦你换了一台电脑，你又得重新配置环境，而且你需要拷贝你的博客一份在云端，不然你在新的电脑配置好，推送过去，你之前写的博客就没了。（当然现在大家探索出了用语雀来实现云写作的功能，我没有去试过，貌似也比较复杂。）</li><li>评论系统<br>　因为Hexo无后端，所以你的评论系统必须外接其他平台，可选的评论系统很多，你需要从他们当中挑选一个，然后配置，我总是担心评论的数据会丢失，之前还爆出大家用的很多的valine有安全问题，所以又换了waline，总之我觉得还是比较繁琐的。</li></ul><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul><li>Hexo非常适合折腾的玩家，如果你有时间折腾，非常推荐你玩一玩Hexo，因为用的人多，主题也多，遇到问题网上基本都能找到答案。</li><li>我之前也写过部署教程，有兴趣的同学可以参考： {abtn icon&#x3D;”far fa-paper-plane” color&#x3D;”#7dd076” href&#x3D;”<a class="link"   href="https://mp.weixin.qq.com/s/jVEv9jHV3WS5nAkVOmAcng&quot;" >https://mp.weixin.qq.com/s/jVEv9jHV3WS5nAkVOmAcng&quot;<i class="fas fa-external-link-alt"></i></a> radius&#x3D;”10px” content&#x3D;”点此传送”&#x2F;}<br>Hexo不仅仅可以部署到GitHub，如果你有服务器，但还是想用Hexo，我也整理过一篇部署到服务器的教程，可以 {abtn icon&#x3D;”far fa-paper-plane” color&#x3D;”#6a9c78” href&#x3D;”<a class="link"   href="https://breakthewa11.com/archives/hexo-building.html&quot;" >https://breakthewa11.com/archives/hexo-building.html&quot;<i class="fas fa-external-link-alt"></i></a> radius&#x3D;”10px” content&#x3D;”参考文章”&#x2F;} </li><li>如果你只是单纯想写些东西，不推荐使用。</li></ul><h3 id="Hugo"><a href="#Hugo" class="headerlink" title="Hugo"></a>Hugo</h3><h4 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h4><ul><li>配置比Hexo更简单一些。</li><li>与Hexo相比，最大的特点就是它是用Go语言写的，如果你有几百篇Markdown的文章要渲染，它可以在几秒内完成，而Hexo则可能会话费比较长时间。</li></ul><h4 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h4><ul><li>但是用Hugo的人没有Hexo的多，意味着Hugo的主题也比较少，你遇到问题了，想要解决，可能会花更多的时间。</li></ul><h4 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h4><ul><li>同Hexo，如果你爱折腾，而且你的文章已经有几百篇了，那么十分推荐你使用它，它也有很多非常简约好看的主题。</li><li>如果你不是上面描述的这类人，不推荐使用。</li></ul><h3 id="Typecho"><a href="#Typecho" class="headerlink" title="Typecho"></a>Typecho</h3><p> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446803525-typecho.png" alt="typecho"> </p><p>　这是一个非常轻量级的博客框架，我曾经用过小半年，很不错。</p><h4 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h4><ul><li>非常轻量，整个文件大小才385KB（Wordpress最新版本5.8是16.5MB）</li><li>而且用的人非常多，也有非常多好看的主题。</li><li>如果你的服务器配置不高（512M内存或是更低），那十分推荐这个博客框架，基本上可以满足你对博客的需求，而且不像Hexo和Hugo，Typecho是带后端的，意味着只要你能上网，你就可以自由地写你的文章，不会被设备所拘束。当然，你也不用去本地电脑上配置复杂的环境。</li></ul><h4 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h4><ul><li>更新问题<br>　从上面的图可以看出来，Typecho已经快9年没有更新了，而且博客对应的一些插件也比较老了。</li><li>扩展性<br>　对于单纯的博客来说，这个问题其实不是问题，但是如果和Wordpress相比，确实Typecho的扩展性有限。</li></ul><h4 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h4><ul><li>对于单纯想写博客，不像搞的花里胡哨的，服务器配置有限，同时也不想花费太多时间去折腾优化博客的同学，非常推荐你使用Typecho</li></ul><p> <img src="https://pic.loll.cc/images/2021/08/20/20210820151339.png" alt="Test"> </p><ul><li>GitHub上的8.1K星星已经说明了它的优秀！</li><li>我也写过一篇部署Typecho的文章，有兴趣的同学可以参考，相信会对你非常有帮助： {abtn icon&#x3D;”” color&#x3D;”#5585b5” href&#x3D;”<a class="link"   href="https://breakthewa11.com/archives/typecho-building.html&quot;" >https://breakthewa11.com/archives/typecho-building.html&quot;<i class="fas fa-external-link-alt"></i></a> radius&#x3D;”10px” content&#x3D;”参考文章”&#x2F;}</li></ul><h3 id="Halo"><a href="#Halo" class="headerlink" title="Halo"></a>Halo</h3><h4 id="演示站点-1"><a href="#演示站点-1" class="headerlink" title="演示站点"></a><a class="link"   href="https://blog.laoda.de/" >演示站点<i class="fas fa-external-link-alt"></i></a></h4><p> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446773318-halo.png" alt="Halo"> </p><p>　Halo是用java编写的一个博客框架，我之前专门有一期视频跟大家详细讲解了如果利用Docker来部署Halo博客，非常方便。</p><p> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446779599-haloex.png" alt="Test"> </p><h4 id="优点-3"><a href="#优点-3" class="headerlink" title="优点"></a>优点</h4><ul><li>部署方便（指用Docker）</li><li>主题也日渐丰富</li><li>开发者非常友好，有活跃的社区，基本上你碰到任何问题，都能在社区中找到答案（当然先要学习提问的智慧）</li><li>维护方便（尤其是用了Docker）</li></ul><h4 id="缺点-3"><a href="#缺点-3" class="headerlink" title="缺点"></a>缺点</h4><ul><li>因为是java写的，比较吃服务器的配置，推荐服务器内存至少1GB</li></ul><h4 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h4><ul><li>如果你有一台配置不错的服务器，那么快来试一试Halo吧，你会发现太省心了，与Hexo、Hugo比，它自带了后端，随时随地你都可以写作，与Typecho比，你不需要去下载邮件插件等一系列插件，Halo都贴心地给你集成好了，你只需要简单的几个设置就可以使用，</li><li>如果想换主题，也可以轻松地利用远程下载，一键换成新主题，非常方便。你可以随时利用博客自带的备份功能来备份你博客的所有数据，并把他们下载到你的本地；Halo更新了，你也可以利用docker在10s钟内完成升级……</li><li>总之，随着现在又上线了几个主题，Halo是基本可以满足你所有的需求的，相信我。</li></ul><h3 id="Wordpress"><a href="#Wordpress" class="headerlink" title="Wordpress"></a>Wordpress</h3><p> <img src="https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446807440-Wordpress.png" alt="Test"> </p><p>　不多说了，截至2019年10月的统计，全球所有网站中，有超过34.7%的网站采用WordPress方式搭建，也就是说每3个就有1个是用WordPress搭建的，小到一个个人博客，大到美国白宫官方网站。 如果按照活跃网站总数估算1.72亿个来算，这意味着目前约有6000万个网站正在使用WordPress。</p><h4 id="优点-4"><a href="#优点-4" class="headerlink" title="优点"></a>优点</h4><ul><li>用的人多，你遇到的99.9%的问题，世界上其他人肯定都遇到过，所以你可以比较容易在网上找到解决方案。</li><li>Wordpress不仅仅可以搭博客，它还可以搭一个论坛，它甚至还可以搭一个商城。</li><li>生态丰富，插件多。你能想到的功能，99.9% Wordpress都有，利用庞大的插件库，你可以完成你对网站的一切幻想。</li></ul><h4 id="缺点-4"><a href="#缺点-4" class="headerlink" title="缺点"></a>缺点</h4><ul><li>臃肿，由于功能过于强大，Wordpress与上面几个博客框架相比，显得非常臃肿，尤其是当你的博客内容多了之后，需要你有一定的网站优化能力（当然这个可以慢慢学，也有很多插件可以帮上忙）</li><li>比较占用服务器资源，建议服务器内存有1GB左右。</li></ul><h4 id="总结-4"><a href="#总结-4" class="headerlink" title="总结"></a>总结</h4><ul><li>如果你希望博客的延展性更强，而且你也有折腾的心，那么不要犹豫了，和我一样，选择Wordpress吧。</li><li>愿你出走半生，回来仍旧是Wordpress</li></ul><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><ul><li>说了这么多，还是像我第一次写教程类文章说的那样。建博客容易，维护博客难。其实选择什么框架不重要，重要的是你能坚持一直更新，产出内容，不管是给自己看，还是给别人看。</li><li>最后，欢迎大家交流遇到的问题，如果大家搭好了自己的博客，也欢迎在评论区秀出来！想要添加友情链接的，也可以在留言区告知～</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt; &lt;img src=&quot;https://cdn.jsdelivr.net/gh/RalstonLiu/mdnice4/2021-8-20/1629446767346-blog.jpg&quot; alt=&quot;Test&quot;&gt; &lt;/p&gt;
+&lt;h3 id=&quot;前言：&quot;&gt;&lt;a href=&quot;#前言：&quot; </summary>
+      
+    
+    
+    
+    <category term="博客" scheme="http://example.com/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些免费资源</title>
+    <link href="http://example.com/2022/07/08/%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E8%B5%84%E6%BA%90/"/>
+    <id>http://example.com/2022/07/08/%E4%B8%80%E4%BA%9B%E5%85%8D%E8%B4%B9%E8%B5%84%E6%BA%90/</id>
+    <published>2022-07-08T00:13:57.406Z</published>
+    <updated>2022-07-08T00:15:43.029Z</updated>
+    
+    <content type="html"><![CDATA[<script src="https://gist.github.com/imba-tjd/d73258f0817255dbe77d64d40d985e76.js"></script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;script src=&quot;https://gist.github.com/imba-tjd/d73258f0817255dbe77d64d40d985e76.js&quot;&gt;&lt;/script&gt;</summary>
+      
+    
+    
+    
+    <category term="免费" scheme="http://example.com/categories/%E5%85%8D%E8%B4%B9/"/>
+    
+    
+    <category term="免费" scheme="http://example.com/tags/%E5%85%8D%E8%B4%B9/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用IBM免费服务器搭建宝塔面板</title>
+    <link href="http://example.com/2022/07/07/ibm-bt/"/>
+    <id>http://example.com/2022/07/07/ibm-bt/</id>
+    <published>2022-07-07T10:47:41.392Z</published>
+    <updated>2022-07-07T10:55:19.983Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="搭建准备"><a href="#搭建准备" class="headerlink" title="搭建准备"></a>搭建准备</h3><ul><li>一台PC,一个可用的IBM LINUX ONE VPS。</li></ul><h3 id="v安装宝塔面板（7-7-0）"><a href="#v安装宝塔面板（7-7-0）" class="headerlink" title="v安装宝塔面板（7.7.0）"></a>v安装宝塔面板（7.7.0）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:<span class="comment">//f.cccyun.cc/bt/install_6.0.sh &amp;&amp; bash install.sh</span></span><br></pre></td></tr></table></figure><p>此时无需进入</p><h3 id="解除宝塔绑定限制"><a href="#解除宝塔绑定限制" class="headerlink" title="解除宝塔绑定限制"></a>解除宝塔绑定限制</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https:<span class="comment">//10g.biz/downloads/LinuxPanel.zip &amp;&amp; unzip LinuxPanel.zip &amp;&amp; bash /root/panel/update.sh &amp;&amp; rm -f /www/server/panel/data/bind.pl</span></span><br></pre></td></tr></table></figure><h3 id="安装宝塔面板（7-6-0）"><a href="#安装宝塔面板（7-6-0）" class="headerlink" title="安装宝塔面板（7.6.0）"></a>安装宝塔面板（7.6.0）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O install.sh http:<span class="comment">//v7.hostcli.com/install/install-ubuntu_6.0.sh &amp;&amp; sudo bash install.sh</span></span><br></pre></td></tr></table></figure><h3 id="绿化（变为纯净版）"><a href="#绿化（变为纯净版）" class="headerlink" title="绿化（变为纯净版）"></a>绿化（变为纯净版）</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http:<span class="comment">//v7.hostcli.com/install/update6.sh|bash</span></span><br></pre></td></tr></table></figure><h3 id="开放所有端口"><a href="#开放所有端口" class="headerlink" title="开放所有端口"></a>开放所有端口</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iptables -P INPUT ACCEPT</span><br><span class="line">iptables -P FORWARD ACCEPT</span><br><span class="line">iptables -P OUTPUT ACCEPT</span><br><span class="line">iptables -F</span><br></pre></td></tr></table></figure><h3 id="Ubuntu镜像默认设置了Iptable规则，关闭它"><a href="#Ubuntu镜像默认设置了Iptable规则，关闭它" class="headerlink" title="Ubuntu镜像默认设置了Iptable规则，关闭它"></a>Ubuntu镜像默认设置了Iptable规则，关闭它</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get purge netfilter-persistent</span><br><span class="line">reboot</span><br></pre></td></tr></table></figure><p>或者强制删除</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf /etc/iptables &amp;&amp; reboot</span><br></pre></td></tr></table></figure><h3 id="进入面板"><a href="#进入面板" class="headerlink" title="进入面板"></a>进入面板</h3><ul><li>你的服务器ip:8888</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;搭建准备&quot;&gt;&lt;a href=&quot;#搭建准备&quot; class=&quot;headerlink&quot; title=&quot;搭建准备&quot;&gt;&lt;/a&gt;搭建准备&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;一台PC,一个可用的IBM LINUX ONE VPS。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;v安装宝塔面板（</summary>
+      
+    
+    
+    
+    <category term="免费" scheme="http://example.com/categories/%E5%85%8D%E8%B4%B9/"/>
+    
+    
+    <category term="IBM" scheme="http://example.com/tags/IBM/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo+GitHub搭建个人免费博客教程</title>
